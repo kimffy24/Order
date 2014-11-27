@@ -36,7 +36,7 @@ return array (
 										'route' => '/order[/]',
 										'defaults' => array (
 												'__NAMESPACE__' => 'Order\Controller',
-												'controller' => 'Welcome',
+												'controller' => 'WelcomeController',
 												'action' => 'welcome' 
 										) 
 								),
@@ -51,7 +51,7 @@ return array (
 														),
 														'defaults' => array (
 																'__NAMESPACE__' => 'Order\Controller',
-																'controller' => 'Welcome',
+																'controller' => 'WelcomeController',
 																'action' => 'welcome' 
 														) 
 												),
