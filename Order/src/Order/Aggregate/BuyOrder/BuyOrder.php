@@ -5,7 +5,12 @@ use Order\Aggregate\Utils\AggregateInterface;
 use Order\Aggregate\Utils\EasyProperties;
 use Order\Aggregate\BuyOrder\Goods;
 
-class BurOrder extends EasyProperties implements AggregateInterface
+/**
+ * 购物单
+ * @author JiefzzLon
+ *
+ */
+class BuyOrder extends EasyProperties implements AggregateInterface
 {
     private $id;
     
