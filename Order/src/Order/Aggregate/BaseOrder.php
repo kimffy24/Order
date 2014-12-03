@@ -3,6 +3,7 @@ namespace Order\Aggregate;
 
 use Order\Model\MainModel;
 use Order\Model\LogisticsModel;
+use Order\Aggregate\AggregateInterface;
 
 abstract class BaseOrder implements AggregateInterface {
 
