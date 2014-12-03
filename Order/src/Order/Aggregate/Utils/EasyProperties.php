@@ -36,6 +36,12 @@ abstract class EasyProperties implements PersistInterface
      */
     public function getParamsCopy()
     {
-        return $this->params;
+        $params = $this->params;
+        foreach($params as $k => $v){
+            if(is_object($v)){
+                $params[$k] = ($v instanceof EasyProperties)?$v->getParamsCopy():null;
+            }
+        }
+        return $params;
     }
 }

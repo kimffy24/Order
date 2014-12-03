@@ -16,7 +16,6 @@ class BurOrder extends EasyProperties implements AggregateInterface
         $this->params['buyer'] = null;
         $this->params['time'] = null;
         $this->params['total'] = null;
-        $this->id = 155;
     }
 	/**
      * @see \Order\Aggregate\AggregateInterface::getId()
