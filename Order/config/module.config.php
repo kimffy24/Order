@@ -1,11 +1,5 @@
 <?php
 return array(
-    'controllers' => array(
-        'invokables' => array(
-            'Order\Controller\Welcome' => 'Order\Controller\WelcomeController',
-            'Order\Controller\Unified' => 'Order\Controller\UnifiedController'
-        )
-    ),
     'view_manager' => array(
         'strategies' => array(
             'ViewJsonStrategy'

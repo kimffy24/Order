@@ -1,6 +1,6 @@
 <?php
 
-namespace Order\Aggregate;
+namespace Order\Aggregate\Utils;
 
 interface AggregateAwareInterface {
 	public function setAggregate(AggregateInterface $a);
