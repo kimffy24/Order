@@ -10,8 +10,13 @@ use Order\Service\Utils\PersistInterface;
  */
 abstract class EasyProperties implements PersistInterface
 {
-    protected $keys = array();
+    protected $keys;
     protected $params;
+    protected function __construct(array $keys=array()){
+        $this->keys = $keys;
+        foreach ($this->keys as $v)
+            $this->params[$v] = null;
+    }
     /**
      * get/set屬性
      * 通過php魔術方法來實現get/set

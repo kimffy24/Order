@@ -15,12 +15,8 @@ class BuyOrder extends EasyProperties implements AggregateInterface
     private $id;
     
     public function __construct(){
-        $this->keys=array('goods','seller','buyer','time','total');
-        $this->params['goods'] = new Goods;
-        $this->params['seller'] = null;
-        $this->params['buyer'] = null;
-        $this->params['time'] = null;
-        $this->params['total'] = null;
+        parent::__construct(array('goods','seller','buyer','time','total'));
+        $this->setGoods(new Goods());
     }
 	/**
      * @see \Order\Aggregate\AggregateInterface::getId()
