@@ -1,7 +1,7 @@
 <?php
 namespace Order\Controller;
 
-use TinyBS\SimpleMVC\Controller\BaseController as TinyBsBaseController;
+use TinyBS\SimpleMvc\Controller\TinyBsBaseController;
 
 class BaseController extends TinyBsBaseController {
 }
