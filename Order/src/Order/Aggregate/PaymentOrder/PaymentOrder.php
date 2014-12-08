@@ -3,7 +3,6 @@ namespace Order\Aggregate\PaymentOrder;
 
 use Order\Aggregate\Utils\EasyProperties;
 use Order\Aggregate\Utils\AggregateInterface;
-use Order\Aggregate\BuyOrder\BuyOrder;
 
 /**
  * 支付单
@@ -34,14 +33,14 @@ class PaymentOrder extends EasyProperties implements AggregateInterface
         if($target == $this->getMapKey('buy_order_list')){
             switch($op){
                 case 'add':
-                    if($args[0] instanceof BuyOrder){
+                    if($args[0] instanceof AggregateInterface){
                         $obj = call_user_func_array(array($this, 'get'.$target), array());
                         $new_params = array(spl_object_hash($args[0])=>$args[0]);
                         call_user_func_array(array($this, 'set'.$target), array(array_merge($obj,$new_params)));
                     }
                     break;
                 case 'del':
-                    if($args[0] instanceof BuyOrder){
+                    if($args[0] instanceof AggregateInterface){
                         $obj = call_user_func_array(array($this, 'get'.$target), array());
                         $delete_key = spl_object_hash($args[0]);
                         if(key_exists($delete_key, $obj))
@@ -62,5 +61,9 @@ class PaymentOrder extends EasyProperties implements AggregateInterface
             foreach($result[$checkKey] as $k => $v)
                 $result[$checkKey][$k] = ($v instanceof EasyProperties)?$v->getParamsCopy():$v;
         return $result;
+    }
+    
+    public function calculateTotalPay(){
+        
     }
 }
